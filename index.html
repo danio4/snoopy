@@ -4,7 +4,6 @@
   <title>Snoopy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Reset y fondo */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -37,15 +36,15 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      width: 90%;
-      max-width: 600px;
+      z-index: 1;
     }
 
-    /* Imagen */
+    /* Imagen sin distorsión, tamaño reducido */
     .imagen-principal {
-      width: 100%;
-      max-height: 60vh;
+      width: auto;
       height: auto;
+      max-width: 400px;
+      max-height: 400px;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
@@ -69,13 +68,12 @@
       transform: scale(1.05);
     }
 
-    @media (max-height: 500px) {
-      .imagen-principal {
-        max-height: 40vh;
-      }
-    }
-
     @media (max-width: 500px) {
+      .imagen-principal {
+        max-width: 300px;
+        max-height: 300px;
+      }
+
       .boton-musica {
         font-size: 18px;
         padding: 12px 25px;
@@ -91,12 +89,11 @@
     Tu navegador no soporta el video.
   </video>
 
-  <!-- Contenido principal -->
+  <!-- Contenido -->
   <div class="contenido">
-    <img src="imagen.jpg" alt="Imagen principal" class="imagen-principal">
-
+    <img src="893d9b00-401b-4e27-995d-64ca453ea1f7.png" alt="Imagen principal" class="imagen-principal">
     <br>
-    <button class="boton-musica" onclick="document.getElementById('musica').play()">SOUND</button>
+    <button class="boton-musica" onclick="document.getElementById('musica').play()">BOTÓN</button>
     <audio id="musica" src="musica.m4a"></audio>
   </div>
 
