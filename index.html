@@ -1,29 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Snoopy </title>
-    <style>
-      body {
-        font-family: sans-serif;
-        text-align: center;
-        padding: 20px;
-      }
+<head>
+  <title>Snoopy</title>
+  <style>
+    /* Fondo en video */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
 
-      .imagen-principal {
-        max-width: 100%;
-        margin-top: 20px;
-      }
+    video#fondo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
 
-      .tumba {
-        margin-top: 10px;
-      }
-    </style>
-  </head>
-  <body>
-   
-    
-   
-    
+    .contenido {
+      position: relative;
+      text-align: center;
+      padding: 20px;
+      z-index: 1;
+    }
+
+    .imagen-principal {
+      width: 50%; /* No ocupa toda la pantalla */
+      max-width: 600px;
+      margin-top: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .boton-musica {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .boton-musica:hover {
+      background-color: #ff3d9d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video de fondo -->
+  <video id="fondo" autoplay muted loop playsinline>
+    <source src="fondo.mp4" type="video/mp4">
+    Tu navegador no soporta el video de fondo.
+  </video>
+
+  <!-- Contenido visible -->
+  <div class="contenido">
     <img src="imagen.jpg" alt="Imagen principal" class="imagen-principal">
-  </body>
+
+    <br>
+    <button class="boton-musica" onclick="document.getElementById('musica').play()">MUSIC</button>
+
+    <audio id="musica" src="musica.m4a"></audio>
+  </div>
+
+</body>
 </html>
