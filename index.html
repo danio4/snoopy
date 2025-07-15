@@ -49,7 +49,7 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
 
-    /* Botón de música */
+    /* Botón */
     .boton-musica {
       margin-top: 20px;
       padding: 15px 30px;
@@ -83,7 +83,7 @@
 </head>
 <body>
 
-  <!-- Video de fondo -->
+  <!-- Video de fondo que se repite en bucle -->
   <video id="fondo" autoplay muted loop playsinline>
     <source src="fondo.mp4" type="video/mp4">
     Tu navegador no soporta el video.
@@ -91,9 +91,9 @@
 
   <!-- Contenido -->
   <div class="contenido">
-    <img src="imagen.jpg" alt="Imagen principal" class="imagen-principal">
+    <img src="imagen.png" alt="Imagen principal" class="imagen-principal">
     <br>
-    <button class="boton-musica" onclick="document.getElementById('musica').play()">MUSIC</button>
+    <button class="boton-musica" onclick="document.getElementById('musica').play()">BOTON</button>
     <audio id="musica" src="musica.m4a"></audio>
   </div>
 
