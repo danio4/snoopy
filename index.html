@@ -40,7 +40,7 @@
       z-index: 1;
     }
 
-    /* Imagen sin distorsión, tamaño reducido */
+    /* Imagen centrada, sin distorsión */
     .imagen-principal {
       width: auto;
       height: auto;
@@ -50,23 +50,25 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
 
-    /* Botón */
+    /* BOTÓN estilo glassmorphism tipo iOS */
     .boton-musica {
       margin-top: 20px;
       padding: 15px 30px;
       font-size: 20px;
-      background-color: #ff69b4;
       color: white;
-      border: none;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 15px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
 
     .boton-musica:hover {
-      background-color: #ff3d9d;
       transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.25);
     }
 
     @media (max-width: 500px) {
@@ -94,7 +96,7 @@
   <div class="contenido">
     <img src="imagen.jpg" alt="Imagen principal" class="imagen-principal">
     <br>
-    <button class="boton-musica" onclick="document.getElementById('musica').play()">♫</button>
+    <button class="boton-musica" onclick="document.getElementById('musica').play()">♫ BOTÓN ♫</button>
     <audio id="musica" src="musica.m4a"></audio>
   </div>
 
