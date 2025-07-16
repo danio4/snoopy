@@ -4,7 +4,6 @@
   <title>Snoopy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="ICON.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
       box-sizing: border-box;
@@ -85,7 +84,7 @@
 </head>
 <body>
 
-  <!-- Video de fondo que se repite en bucle -->
+  <!-- Video de fondo -->
   <video id="fondo" autoplay muted loop playsinline>
     <source src="fondo.mp4" type="video/mp4">
     Tu navegador no soporta el video.
@@ -95,9 +94,19 @@
   <div class="contenido">
     <img src="imagen.jpg" alt="Imagen principal" class="imagen-principal">
     <br>
-    <button class="boton-musica" onclick="document.getElementById('musica').play()">♫ BOTÓN ♫</button>
+    <button class="boton-musica" onclick="document.getElementById('musica').play()"> ♫ </button>
     <audio id="musica" src="musica.m4a"></audio>
   </div>
+
+  <!-- Música al tocar cualquier parte -->
+  <script>
+    document.addEventListener("click", function () {
+      const audio = document.getElementById("musica");
+      if (audio.paused) {
+        audio.play();
+      }
+    }, { once: true });
+  </script>
 
 </body>
 </html>
